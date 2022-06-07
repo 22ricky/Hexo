@@ -1,14 +1,15 @@
 ---
 title: Docker部署Gitlab
 date: 2022-06-07 17:36:03
+categories: Docker
 tags:
 ---
-1. 拉取gitlab镜像
+### 拉取gitlab镜像
 ``` bash
 docker pull gitlab/gitlab-ce:latest
 ```
 
-2. 编写docker-compose.yml
+### 编写docker-compose.yml
 ``` yml
 version: '3.8'
 services:
@@ -29,12 +30,12 @@ services:
       - './data:/var/opt/gitlab'
 ```
 
-3. 启动gitlab容器
+### 启动gitlab容器
 ``` bash
 docker-compose up -d
 ```
 
-4. 查看``root``用户默认密码
+### 查看``root``用户默认密码
 ``` bash
 docker exec -it gitlab bash
 cat /etc/gitlab/initial_root_password
